@@ -44,22 +44,46 @@ public class Job {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getEmployer(), getLocation(), getPositionType(), getCoreCompetency());
+//        return Objects.hash(getId(), getName(), getEmployer(), getLocation(), getPositionType(), getCoreCompetency());
+        return Objects.hash(id);
     }
 
+
     @Override
-    public String toString(){
+    public String toString() {
 
         return
 
                 "\n" +
                         "ID: " + this.id + System.lineSeparator() +
                         "Name: " + (this.name == null ? "Data not available" : this.name) + System.lineSeparator() +
-                        "Employer: " + (this.employer == null ? "Data not available" : this.name) + System.lineSeparator() +
-                        "Location: " + (this.location == null ? "Data not available" : this.name) + System.lineSeparator() +
-                        "Position Type: " + (this.positionType == null ? "Data not available" : this.name)+ System.lineSeparator() +
-                        "Core Competency: " + (this.coreCompetency == null ? "Data not available" : this.name)
+//                        "Employer: " + (this.employer == null ? "Data not available" : this.employer) + System.lineSeparator() +
+                        "Employer: " + (!Objects.equals(this.getEmployer().getValue(), "") ? this.getEmployer().getValue() : "Data not available") + System.lineSeparator() +
+                        "Location: " + (this.location == null ? "Data not available" : this.location) + System.lineSeparator() +
+//                        "Position Type: " + (this.positionType == null ? "Data not available" : this.positionType)+ System.lineSeparator() +
+                        "Position Type: " + (!Objects.equals(this.getPositionType().getValue(), "") ? this.getPositionType().getValue() : "Data not available")+ System.lineSeparator() +
+                        "Core Competency: " + (this.coreCompetency == null ? "Data not available" : this.coreCompetency)
                 + "\n";
+
+//                System.lineSeparator() + "ID: " + getId() + "\n" +
+//                        "Name: " + getName() + "\n" +
+//                        "Employer: " + getEmployer() + "\n" +
+//                        "Location: " + getLocation() + "\n" +
+//                        "Position Type: " + getPositionType() + "\n" +
+//                        "Core Competency: " + getCoreCompetency() + System.lineSeparator();
+
+
+
+//
+//
+//                        "Position Type: " + (this.getPositionType().getValue() != "" ? this.getPositionType().getValue() : "Data not available")+ System.lineSeparator() +
+//
+
+//                "\n" +
+//                        "ID: " + this.id + System.lineSeparator() +
+//                        "Name: " + (Objects.equals(this.name, "") ? "Data not available" : this.name) + System.lineSeparator() +
+//                        "Employer: " + (Objects.equals(this.employer, "") ? "Data not available" : this.employer) + System.lineSeparator() +
+//
 
     }
 
