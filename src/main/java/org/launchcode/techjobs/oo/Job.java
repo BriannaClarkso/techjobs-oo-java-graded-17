@@ -39,7 +39,8 @@ public class Job {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job job)) return false;
-        return getId() == job.getId() && Objects.equals(getName(), job.getName()) && Objects.equals(getEmployer(), job.getEmployer()) && Objects.equals(getLocation(), job.getLocation()) && Objects.equals(getPositionType(), job.getPositionType()) && Objects.equals(getCoreCompetency(), job.getCoreCompetency());
+//        return getId() == job.getId() && Objects.equals(getName(), job.getName()) && Objects.equals(getEmployer(), job.getEmployer()) && Objects.equals(getLocation(), job.getLocation()) && Objects.equals(getPositionType(), job.getPositionType()) && Objects.equals(getCoreCompetency(), job.getCoreCompetency());
+ return id == job.id;
     }
 
     @Override
@@ -54,16 +55,16 @@ public class Job {
 
         return
 
-                "\n" +
-                        "ID: " + this.id + System.lineSeparator() +
-                        "Name: " + (this.name == null ? "Data not available" : this.name) + System.lineSeparator() +
+                System.lineSeparator()  +
+                        "ID: " + getId() + "\n" +
+                        "Name: " + (this.name == null ? "Data not available" : this.name) + "\n"  +
 //                        "Employer: " + (this.employer == null ? "Data not available" : this.employer) + System.lineSeparator() +
-                        "Employer: " + (!Objects.equals(this.getEmployer().getValue(), "") ? this.getEmployer().getValue() : "Data not available") + System.lineSeparator() +
-                        "Location: " + (this.location == null ? "Data not available" : this.location) + System.lineSeparator() +
+                        "Employer: " + (!Objects.equals(this.getEmployer().getValue(), "") ? this.getEmployer().getValue() : "Data not available") + "\n"  +
+                        "Location: " + (this.location == null ? "Data not available" : this.location) + "\n"  +
 //                        "Position Type: " + (this.positionType == null ? "Data not available" : this.positionType)+ System.lineSeparator() +
-                        "Position Type: " + (!Objects.equals(this.getPositionType().getValue(), "") ? this.getPositionType().getValue() : "Data not available")+ System.lineSeparator() +
+                        "Position Type: " + (!Objects.equals(this.getPositionType().getValue(), "") ? this.getPositionType().getValue() : "Data not available")+ "\n"  +
                         "Core Competency: " + (this.coreCompetency == null ? "Data not available" : this.coreCompetency)
-                + "\n";
+                + System.lineSeparator() ;
 
 //                System.lineSeparator() + "ID: " + getId() + "\n" +
 //                        "Name: " + getName() + "\n" +

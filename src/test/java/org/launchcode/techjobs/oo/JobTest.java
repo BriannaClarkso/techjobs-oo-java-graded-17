@@ -73,7 +73,9 @@ public class JobTest {
 
 //        assertEquals(expectedJob, jobTest.toString());
 
-        assertEquals(jobTest.toString().charAt(0), '\n');
+//        assertEquals(jobTest.toString().charAt(0), System.lineSeparator());
+        assertTrue(jobTest.toString().startsWith(System.lineSeparator()));
+        assertTrue(jobTest.toString().endsWith(System.lineSeparator()));
 
     }
 
@@ -93,14 +95,14 @@ public class JobTest {
 //                + "\n";
 
 
-                "\n" +
-                        "ID: " + jobTest.getId() + System.lineSeparator() +
-                        "Name: " + jobTest.getName() + System.lineSeparator() +
-                        "Employer: " + jobTest.getEmployer() + System.lineSeparator() +
-                        "Location: "  + jobTest.getLocation() + System.lineSeparator() +
-                        "Position Type: "  + jobTest.getPositionType() + System.lineSeparator() +
+              String.format(System.lineSeparator() +
+                        "ID: " + jobTest.getId()) + "\n" +
+                        "Name: " + jobTest.getName() + "\n"  +
+                        "Employer: " + jobTest.getEmployer() + "\n"  +
+                        "Location: "  + jobTest.getLocation() + "\n"  +
+                        "Position Type: "  + jobTest.getPositionType() + "\n" +
                         "Core Competency: "  + jobTest.getCoreCompetency()
-                        + "\n";
+                        + System.lineSeparator();
 
 
         assertEquals(expectedJob, jobTest.toString());
@@ -116,13 +118,13 @@ public class JobTest {
 
         String expectedJob = String.format(System.lineSeparator() +
 //                        "\n" +
-                        "ID: %d " + System.lineSeparator() +
-                        "Name: %s" + System.lineSeparator() +
-                        "Employer: Data not available" + System.lineSeparator() +
-                        "Location: %s" + System.lineSeparator() +
-                        "Position Type: Data not available" + System.lineSeparator() +
-                        "Core Competency: %s"
-                        + System.lineSeparator(), jobTest.getId(), jobTest.getName(), jobTest.getLocation(), jobTest.getCoreCompetency());
+                        "ID: %d" , jobTest.getId()) + "\n" +
+                        "Name: " + jobTest.getName() + "\n" +
+                        "Employer: Data not available" +"\n" +
+                        "Location: " + jobTest.getLocation() + "\n" +
+                        "Position Type: Data not available" + "\n" +
+                        "Core Competency: " + jobTest.getCoreCompetency()
+                        + System.lineSeparator();
 
         assertEquals(expectedJob, jobTest.toString());
 
